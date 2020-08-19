@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_back"
+        android:enabled="true"
+        android:title="@string/menu_back"
+        android:icon="@drawable/ic_baseline_arrow_back_24"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_show_pin"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_visibility_24"
+        android:title="@string/menu_show_pin"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_hide_pin"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_visibility_off_24"
+        android:title="@string/menu_hide_pin"
+        app:showAsAction="ifRoom" />
+</menu>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="menu_settings" type="id" />
+    <item name="menu_search" type="id" />
+    <item name="menu_share" type="id" />
+    <item name="menu_back" type="id" />
+    <item name="menu_show_pin" type="id" />
+    <item name="menu_hide_pin" type="id" />
+    <item name="menu_alert" type="id" />
+    <item name="menu_delete_alert" type="id" />
+</resources>

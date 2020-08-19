@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">androiddiplom</string>
+    <string name="toast_edit_note_click">toast edit note click</string>
+    <string name="hint_enter_pin_code">Enter PIN code</string>
+    <string name="toast_note_saved">Note saved</string>
+    <string name="toast_numbers_only">Numbers only</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_hide_pin">Hide pin</string>
+    <string name="menu_show_pin">Show pin</string>
+    <string name="menu_back">Back</string>
+    <string name="menu_cancel">Cancel</string>
+    <string name="menu_alert">alert</string>
+    <string name="menu_delete_alert">Delete alert</string>
+    <string name="hint_title">Title</string>
+    <string name="hint_note">Note</string>
+    <string name="toast_enter4num">Enter four numbers</string>
+    <string name="toast_add_your_note">Add your note</string>
+    <string name="toast_note_update">Note update</string>
+    <string name="toast_edit_note_click">Long click on note for edit</string>
+    <string name="toast_note_updated">Note updated</string>
+    <string name="toast_wrong_pin" />
+</resources>

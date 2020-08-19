@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activitys.MainActivity">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edTxt_search"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/whitetr60"
+        android:hint="Search"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
+    <include layout="@layout/content_main" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/barEditor"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        app:backgroundTint="@color/whitetr61"
+        app:elevation="8dp"
+        app:fabAlignmentMode="end" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabConfirm"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:elevation="12dp"
+        app:layout_anchor="@id/barEditor" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
