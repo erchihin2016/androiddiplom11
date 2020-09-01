@@ -70,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_gravity="bottom"
-        app:backgroundTint="@color/colorWhiteTr60"
+        app:backgroundTint="@color/colorwhitetr60"
         app:elevation="8dp"
         app:fabAlignmentMode="end" />
 
