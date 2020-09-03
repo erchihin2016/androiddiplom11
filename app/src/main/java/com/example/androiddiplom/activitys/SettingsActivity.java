@@ -2,10 +2,8 @@ package com.example.androiddiplom.activitys;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.design.widget.BottomAppBar;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,7 +18,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.androiddiplom.R;
 import com.google.android.material.bottomappbar.BottomAppBar;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import static com.example.androiddiplom.activitys.LoginActivity.savedPin;
 

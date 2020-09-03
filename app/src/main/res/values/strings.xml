@@ -20,4 +20,5 @@
     <string name="toast_note_update">Note update</string>
     <string name="toast_note_updated">Note updated</string>
     <string name="toast_wrong_pin" />
+    <string name="search">Search</string>
 </resources>

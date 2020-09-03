@@ -8,12 +8,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.locknote.App;
-import com.example.locknote.Executor;
-import com.example.locknote.Note;
-import com.example.locknote.R;
-import com.example.locknote.database.NoteDao;
-import com.example.locknote.database.StorageComponent;
+import com.example.androiddiplom.App;
+import com.example.androiddiplom.Executor;
+import com.example.androiddiplom.Note;
+import com.example.androiddiplom.R;
+import com.example.androiddiplom.database.StorageComponent;
 
 import java.util.ArrayList;
 import java.util.List;
