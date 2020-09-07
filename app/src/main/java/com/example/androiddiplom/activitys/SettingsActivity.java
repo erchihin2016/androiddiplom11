@@ -18,10 +18,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.androiddiplom.R;
 import com.google.android.material.bottomappbar.BottomAppBar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import static com.example.androiddiplom.activitys.LoginActivity.savedPin;
 
-public class SettingsActivity<FloatingActionButton> extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity {
     private static final String PREF_PIN = "pref_pin";
     private EditText pin;
     private int progress = 0;

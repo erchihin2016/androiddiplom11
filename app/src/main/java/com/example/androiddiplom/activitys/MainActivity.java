@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,15 +23,14 @@ import com.example.androiddiplom.adapter.NotesDataAdapter;
 import com.example.androiddiplom.database.NoteDao;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.List;
 
 import static com.example.androiddiplom.R.string.toast_edit_note_click;
 
-public class MainActivity<TextInputEditText, FloatingActionButton> extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
     private NotesDataAdapter adapter;
-    private TextInputEditText search;
+    private EditText search;
     private NoteDao noteDao;
 
     @Override
