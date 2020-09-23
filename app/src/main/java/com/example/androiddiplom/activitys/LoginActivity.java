@@ -13,14 +13,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.androiddiplom.App;
 import com.example.androiddiplom.R;
+import com.example.androiddiplom.key.Keystore;
 
 public class LoginActivity extends AppCompatActivity {
-    private static final String PREF_USER_PIN = "pref_user_pin";
-    private static final String PREF_PIN = "pref_pin";
-    public static SharedPreferences savedPin;
+    private com.example.androiddiplom.key.Keystore Keystore;
+    private EditText pin;
     private int progress = 0;
-    private String pin;
     private EditText edTxt;
     private ProgressBar progressBar;
 
@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        savedPin = getSharedPreferences(PREF_USER_PIN, MODE_PRIVATE);
+        Keystore = App.getComponent().getKeystore();
         progressBar = findViewById(R.id.bar_progress);
         edTxt = findViewById(R.id.edTxt_pinCode);
 
@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 progressBar.setProgress(progress);
                 if (isProgressDone()) {
-                    pin = edTxt.getText().toString();
+                    Keystore = edTxt.getText().toString();
                     if (isPinSaved()) {
                         checkPin();
                     } else {
@@ -83,11 +83,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean isPinSaved() {
-        return (savedPin.contains(PREF_PIN));
+        return (Keystore.contains(PREF_PIN));
     }
 
     private void checkPin() {
-        if (pin.equals(savedPin.getString(PREF_PIN, ""))) {
+        if (pin.equals(Keystore.getString(PREF_PIN, ""))) {
             toLogin();
         } else {
             edTxt.setText("");
@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void savePin() {
-        savedPin.edit()
+        Keystore.edit()
                 .putString(PREF_PIN, pin)
                 .apply();
 

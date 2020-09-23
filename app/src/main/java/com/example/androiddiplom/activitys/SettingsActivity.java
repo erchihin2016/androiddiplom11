@@ -16,14 +16,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.androiddiplom.App;
+import com.example.androiddiplom.key.Keystore;
 import com.example.androiddiplom.R;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import static com.example.androiddiplom.activitys.LoginActivity.savedPin;
-
 public class SettingsActivity extends AppCompatActivity {
-    private static final String PREF_PIN = "pref_pin";
+
+    private Keystore keystore;
     private EditText pin;
     private int progress = 0;
 
@@ -31,7 +32,7 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-
+        keystore = App.getComponent().getKeystore();
         pin = findViewById(R.id.edTxt_save_pinCode);
         final ProgressBar saveProgressBar = findViewById(R.id.bar_save_progress);
         FloatingActionButton fabSavePin = findViewById(R.id.fabSave);
@@ -74,9 +75,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (isProgressDone()) {
                     String newPin = pin.getText().toString();
-                    savedPin.edit()
-                            .putString(PREF_PIN, newPin)
-                            .apply();
+                    keystore.saveNew(newPin);
                     Toast.makeText(SettingsActivity.this, newPin, Toast.LENGTH_SHORT).show();
                     finish();
                 } else {

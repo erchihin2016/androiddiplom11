@@ -1,5 +1,7 @@
 package com.example.androiddiplom.database;
 
+import com.example.androiddiplom.key.Keystore;
+
 import javax.inject.Singleton;
 
 import dagger.Component;
@@ -8,4 +10,5 @@ import dagger.Component;
 @Component(modules = {StorageModule.class})
 public interface StorageComponent {
     NotesDataBase getStorage();
+    Keystore getKeystore();
 }
