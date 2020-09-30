@@ -2,7 +2,6 @@ package com.example.androiddiplom.activitys;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -18,8 +17,7 @@ import com.example.androiddiplom.R;
 import com.example.androiddiplom.key.Keystore;
 
 public class LoginActivity extends AppCompatActivity {
-    private com.example.androiddiplom.key.Keystore Keystore;
-    private EditText pin;
+    private Keystore keystore = App.getComponent().getKeystore();
     private int progress = 0;
     private EditText edTxt;
     private ProgressBar progressBar;
@@ -28,7 +26,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Keystore = App.getComponent().getKeystore();
         progressBar = findViewById(R.id.bar_progress);
         edTxt = findViewById(R.id.edTxt_pinCode);
 
@@ -53,7 +50,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 progressBar.setProgress(progress);
                 if (isProgressDone()) {
-                    Keystore = edTxt.getText().toString();
                     if (isPinSaved()) {
                         checkPin();
                     } else {
@@ -83,11 +79,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean isPinSaved() {
-        return (Keystore.contains(PREF_PIN));
+        return (keystore.hasPin());
     }
 
     private void checkPin() {
-        if (pin.equals(Keystore.getString(PREF_PIN, ""))) {
+        if (keystore.checkPin(edTxt.getText().toString())) {
             toLogin();
         } else {
             edTxt.setText("");
@@ -98,9 +94,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void savePin() {
-        Keystore.edit()
-                .putString(PREF_PIN, pin)
-                .apply();
-
+        keystore.saveNew(edTxt.getText().toString());
     }
 }

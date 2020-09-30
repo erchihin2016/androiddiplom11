@@ -18,7 +18,7 @@ public class SimpleKeystore implements Keystore {
 
     @Override
     public boolean checkPin(String pin) {
-        return pin.equals(preferences.getString(pin, null));
+        return pin.equals(preferences.getString(PREF_PIN, null));
     }
 
     @Override
