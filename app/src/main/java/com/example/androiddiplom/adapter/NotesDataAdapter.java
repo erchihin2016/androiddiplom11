@@ -8,19 +8,18 @@ import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.androiddiplom.App;
-import com.example.androiddiplom.Executor;
-import com.example.androiddiplom.Note;
-import com.example.androiddiplom.R;
+import com.example.androiddiplom.*;
 import com.example.androiddiplom.database.StorageComponent;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class NotesDataAdapter extends BaseAdapter {
     private List<Note> notes;
     private List<Note> notesDb;
     private LayoutInflater inflater;
+    private NoteComparator noteComparator = new NoteComparator();
     StorageComponent component;
 
     public NotesDataAdapter(Context context, List<Note> notes) {
@@ -29,6 +28,7 @@ public class NotesDataAdapter extends BaseAdapter {
         } else {
             this.notes = notes;
         }
+        sort();
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         component = App.getComponent();
     }
@@ -42,6 +42,7 @@ public class NotesDataAdapter extends BaseAdapter {
         for (Note note : noteList) {
             this.notes.add(note);
         }
+        sort();
         notifyDataSetChanged();
     }
 
@@ -114,5 +115,9 @@ public class NotesDataAdapter extends BaseAdapter {
         });
 
         return view;
+    }
+
+    private void sort() {
+        Collections.sort(notes, noteComparator);
     }
 }
