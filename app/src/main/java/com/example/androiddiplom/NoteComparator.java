@@ -12,7 +12,7 @@ import java.util.Objects;
 
 public class NoteComparator implements Comparator<Note> {
 
-    private final DateFormat format = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault( ));
+    private final DateFormat format = new SimpleDateFormat("dd.MMM.yyyy", Locale.getDefault( ));
 
     @Override
     public int compare(final Note first, Note second) {
